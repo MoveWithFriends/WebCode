@@ -1,5 +1,6 @@
 <?php
 // Default timezone
+// geen idee of dit werkt
 date_default_timezone_set(UTC);
 
 // Database details
