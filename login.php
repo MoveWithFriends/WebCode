@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 <div class="wrapper">
-    <form action="index.php" method="post">
+    <form action="index2.php" method="post">
         <h1 class="text-center">Login</h1>
         <?php if ( isset( $login_status ) && false == $login_status ) : ?>
         <div class="message error">

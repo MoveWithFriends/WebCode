@@ -66,7 +66,7 @@
             <a class="nav-link" href="registratie.php">Inschrijven<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="contactpaginaMWF.html">Contact<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="contactpaginaMWF.php">Contact<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -86,7 +86,7 @@
 
               <div id="modal-wrapper" class="modal">
   
-                <form class="modal-content animate" action="/action_page.php">
+                <form class="modal-content animate" action="index.php" method="post">
                       
                   <div class="imgcontainer">
                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>

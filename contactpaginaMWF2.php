@@ -5,7 +5,7 @@
       <a href="index.php">
         <img class="img-responsive" src="images/logomwf.png" style=" position: absolute; z-index: 2;" alt="">
       </a>
-      <p class="logofoot"> Move with Friends</p>
+      <p class="logofoot"> <?php echo $user->name; ?></p><br>
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -36,22 +36,11 @@
           <li class="nav-item active">
             <a class="nav-link fred" rel="" href="index.php">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Move with Friends
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#kopje1">Move With Friends? Wat is dat?</a>
-              <a class="dropdown-item" href="#kopje2">Hoe werkt het? </a>
-              <a class="dropdown-item" href="#kopje3">Is het voor mij?</a>
-              <a class="dropdown-item" href="#kopje4">Is Move With Friends echt gratis? </a>
-            </div>
+          <li class="nav-item active">
+            <a class="nav-link" href="Data_handling.php">Activiteiten en tijden opgeven<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="registratie.php">Inschrijven<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="contactpaginaMWF.php">Contact<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="contactpaginaMWF2.php">Contact<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -65,7 +54,7 @@
             <a class="navbar-brand" target="_blank" href="https://www.instagram.com/movewithfriends/">
               <img src="images/instagramicon.png" title="Volg ons op Instagram" style="margin-left: 15px;" width="25" height="25" alt=""></a>
             <div class="navbar-brand">
-              <img src="images/loginicon.png" onclick="document.getElementById('modal-wrapper').style.display='block'" style="margin-left: 15px;" width="25" height="25" alt=""> </div>   
+              <p> <a href="logout.php"><img src="images/loginicon.png" title="Log OUT" style="margin-left: 15px;" width="25" height="25" alt=""> </div>    
               <!-- Invliegend inlogscherm -->    
               <div id="modal-wrapper" class="modal">
   
@@ -88,6 +77,7 @@
                     <button type="submit">Login</button>
                     <input type="checkbox" name="rememberme" style="margin:26px 30px;" value="1"> Remember me      
                     <a href="lostpassword.php" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+                    <p><a href="registratie.php">Register here</a></p>
                   </div>
                   
                 </form>
@@ -111,34 +101,34 @@ window.onclick = function(event) {
       </div>
     </div>
   </nav>
-  <article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
-    <h1 class="text-center" style="z-index: 500;">Move With Friends? Wat is dat?</h1>
-    <p class="text-center lead">Move With Friends is dé nieuwe dienst die helpt bij het zoeken naar de perfecte sport- of bewegingspartner! Zin om morgenavond lekker te bewegen, maar niemand die mee wil? Registreer je dan nu gratis op de website of via de app en je hebt morgen gegarandeerd iemand om mee te boksen, fietsen, fitnessen, hardlopen, tennissen, squashen, wandelen of zwemmen. Het vinden van de perfecte match om lekker mee te bewegen was nog nooit zo makkelijk! Dus kom van de bank, trek je sportschoenen uit de kast en Move With Friends!
-    </p>
-    <p id="kopje2"></p>
-  </article>
-  <!-- p = padding, mt = margin top, mb = margin bottom-->
-  <article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
-    <h1 class="text-center">Hoe werkt het?</h1>
-    <!-- lead laat tekst eruit springen, opmaakclass vanuit Bootstrap-->
-    <p class="text-center lead">
-      Move with Friends werkt heel simpel. Meld jezelf aan en wij doen de rest. Bij het vinden van een sportpartner wordt rekening gehouden met: je geslacht, leeftijd, interesses, sportervaring en plaats. Op basis hiervan gaan wij op zoek naar de ideale beweeg- of sportpartner(s) voor jou. Ben je al aangemeld? Log dan gemakkelijk in op de website of via de app, geef een tijd aan wanneer je wil gaan en welke sport je wil gaan doen, kies je partner en Move With Friends! Test het zelf!
-    </p>
-    <p id="kopje3"></p>
-  </article>
-  <article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
-    <h1 class="text-center">Is het iets voor mij?</h1>
-    <p class="text-center lead">
-      Gezond bewegen, de buitenlucht, sociale contacten, het is goed voor ons allemaal! Move With Friends is dus ook voor iedereen! Of je nu een ervaren sporter bent of iemand die nog nooit bij een sportschool is binnengestapt; aan de hand van jouw gegevens gaan wij op zoek naar iemand die perfect bij jou past. Of je nu met iemand wil zwemmen, fitnessen, of wandelen, het wordt allemaal geregeld door Move WIth Friends. Wij regelen je partner, zodat je snel aan de slag kan. Makkelijker kan haast niet! Dus waar wacht je nog op? Kom van de bank, trek je sportschoenen uit de kast en Move With Friends!
-    </p>
-    <p id="kopje4"></p>
-  </article>
-  <article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
-    <h1 class="text-center">Is Move With Friends echt gratis?</h1>
-    <p class="text-center lead">
-      Jazeker! De diensten van Move With Friends zijn volledig gratis. Iedereen moet immers de mogelijkheid krijgen om samen met iemand te bewegen. Het is slechts onze taak om voor jou op zoek te gaan naar de ideale partner om dit mee te kunnen doen. Dus meld je gauw aan om morgen al samen met iemand kunnen te fietsen of te wandelen. Enkel voor de toegang voor verscheidene sportaccommodaties, zoals toegang tot een fitness- of zwemetablissement, en de huur van eventuele sportmaterialen, zoals bokshandschoenen of tennisrackets, kunnen kosten in rekening worden gebracht. Ben je al lid van een sportschool of zwembad waar je afspreekt met je nieuwe sportpartner, en heb je alle benodigde sportmaterialen zelf? Dan hoef je uiteraard niets te betalen! Geen excuses dus! Kom van de bank, trek je sportschoenen uit de kast en Move With Friends!
-    </p>
-  </article>
+<article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
+    <div class="row">
+      <div class="col-md-6 bg-light opacity">
+        <h2>Contactgegevens:</h2>
+        <ul class="homeicon">
+          <li><strong>Move with Friends</strong>
+            Hogeschoollaan 1
+            4818CR, Breda
+            Kantoor HD-206
+          </li>
+        </ul>
+        <ul class="mailicon">
+          <li>
+            <a href="mailto:info@movewithfriends.nl"><strong>Stuur ons een e-mail</strong></a>
+          </li>
+        </ul>
+        <ul class="phoneicon">
+          <li>
+            <a href="tel:+31658796542"><strong>06-58796542</strong></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 bg-light p-2 mb-1 mt-1 opacity">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.138521417129!2d4.795772315847406!3d51.58402457964798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6a1d826c8567d%3A0xdaa7f5a2dd8692b6!2sHogeschoollaan+1%2C+4818+CR+Breda!5e0!3m2!1snl!2snl!4v1539097353859" width="350" height="250" style="border:0"></iframe>
+      </div>
+    </div>
+</article>
+  
   <footer class="app-footer backgroundnav">
     <div class="px-3 py-1 d-none d-lg-block d-xl-block">
       <div class="row">

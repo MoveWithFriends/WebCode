@@ -78,7 +78,7 @@
 <!-- invliegend inlogscherm -->   
               <div id="modal-wrapper" class="modal">
   
-                <form class="modal-content animate" action="/action_page.php">
+                <form class="modal-content animate" action="index.php" method="post">
                       
                   <div class="imgcontainer">
                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
@@ -87,11 +87,16 @@
                   </div>
 
                   <div class="container">
-                    <input type="text" placeholder="Enter Username" name="uname">
-                    <input type="password" placeholder="Enter Password" name="psw">        
+                      <?php if ( isset( $login_status ) && false == $login_status ) : ?>
+                          <div class="message error">
+                              <p>Your username and password are incorrect. Try again.</p>
+                          </div>
+                      <?php endif; ?>
+                    <input type="text" placeholder="Enter Username" name="username">
+                    <input type="password" placeholder="Enter Password" name="password">        
                     <button type="submit">Login</button>
-                    <input type="checkbox" style="margin:26px 30px;"> Remember me      
-                    <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+                    <input type="checkbox" name="rememberme" style="margin:26px 30px;" value="1"> Remember me      
+                    <a href="lostpassword.php" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
                   </div>
                   
                 </form>
