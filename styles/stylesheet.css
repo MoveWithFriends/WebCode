@@ -5,26 +5,34 @@
 *{margin:0px; padding:0px;}
 
 /* Full-width input fields */
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=date]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-  font-size:16px;
+    font-size:16px;
+    font-family:arial;
+}
+.lostpassword {
+  text-decoration:none; 
+  float: right;
+  margin-right:34px; 
+  margin-top:26px;
 }
 
 /* Set a style for all buttons */
 button {
     background-color: lightblue;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 26px;
+    padding: 14px 14px;
+    margin: 0px 0px;
     border: none;
     cursor: pointer;
-    width: 90%;
-  font-size:20px;
+    width: 100%;
+    font-size:20px;
+    font-family:arial;
 }
 button:hover {
     background-color: blue;
@@ -39,7 +47,7 @@ button:hover {
 
 /* The Modal (background) */
 .modal {
-  display:none;
+    display:none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -55,8 +63,8 @@ button:hover {
     background-color: #fefefe;
     margin: 4% auto 15% auto;
     border: 1px solid #888;
-    width: 40%; 
-  padding-bottom: 30px;
+    width: 35%; 
+    padding-bottom: 20px;
 }
 
 /* The Close Button (x) */
@@ -115,6 +123,10 @@ nav {
   width:100%;
 }
 
+.img-responsive3 {
+  width:60%;
+}
+
 .logofoot {
   font-size:calc(12px + 1.5vw);
   color: white;
@@ -146,7 +158,7 @@ body  {
 }
 
 .backgrounddiv  {
-  background-color: lightblue;
+  background-color: light;
 }
 
 ul.homeicon  {
@@ -197,7 +209,7 @@ ul.phoneicon  {
 
 .submit {
     text-transform: uppercase;
-    background: #000;
+    background: lightblue;
     color: #fff;
 }
 
@@ -218,4 +230,18 @@ ul.phoneicon  {
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
