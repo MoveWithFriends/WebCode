@@ -48,10 +48,10 @@
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="registratie.php">Inschrijven<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index3.php">Inschrijven<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="contactpaginaMWF.php">Contact<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="contact.php">Contact<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -65,34 +65,37 @@
             <a class="navbar-brand" target="_blank" href="https://www.instagram.com/movewithfriends/">
               <img src="images/instagramicon.png" title="Volg ons op Instagram" style="margin-left: 15px;" width="25" height="25" alt=""></a>
             <div class="navbar-brand">
-              <img src="images/loginicon.png" onclick="document.getElementById('modal-wrapper').style.display='block'" style="margin-left: 15px;" width="25" height="25" alt=""> </div>   
-              <!-- Invliegend inlogscherm -->    
+              <img src="images/loginicon.png" title="LOGIN" onclick="document.getElementById('modal-wrapper').style.display='block'" style="margin-left: 15px;" width="25" height="25" alt=""> 
+            </div>   
+<!-- invliegend inlogscherm --> 
+
               <div id="modal-wrapper" class="modal">
-  
+
+
+
                 <form class="modal-content animate" action="index.php" method="post">
                       
                   <div class="imgcontainer">
                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-                    <img src="images/logomwf.png" alt="Avatar" >
+                    <img class="img-responsive3" src="images/logomwf.png" alt="Avatar" >
                     <h1 style="text-align:center">Login</h1>
                   </div>
-
-                  <div class="container">
+        
                       <?php if ( isset( $login_status ) && false == $login_status ) : ?>
-                          <div class="message error">
-                              <p>Your username and password are incorrect. Try again.</p>
-                          </div>
+                      <div class="message error">
+                          <p>Your username and password are incorrect. Try again.</p>
+                      </div>
                       <?php endif; ?>
-                    <input type="text" placeholder="Enter Username" name="username">
-                    <input type="password" placeholder="Enter Password" name="password">        
-                    <button type="submit">Login</button>
-                    <input type="checkbox" name="rememberme" style="margin:26px 30px;" value="1"> Remember me      
-                    <a href="lostpassword.php" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-                  </div>
-                  
-                </form>
 
-                
+                    <div class="container" class="text-center lead">
+                    <input type="text" class="text" name="username" placeholder="Enter username">
+                    <input type="password" class="text" name="password" placeholder="Enter password">
+                    <button type="submit" class="submit" value="Submit">Login</button>
+                    <p><input type="checkbox" name="rememberme" value="1" style="float:left; margin-left:34px; margin-top:9px; margin-right:10px"> Remember Me</p>
+
+                        <p><a href="lostpassword.php" style="float:left; margin-left:34px ">Reset Password</a><a href="registratie.php" style="float:right; margin-right:34px">Register here</a></p>
+                        <p></p>
+                </form>
   
 </div>
 

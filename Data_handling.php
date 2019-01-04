@@ -2,7 +2,7 @@
 <body>
   <div>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <a href="index2.php">
+      <a href="index.php">
         <img class="img-responsive" src="images/logomwf.png" style=" position: absolute; z-index: 2;" alt="">
       </a>
       <p class="logofoot"> <?php echo $user->firstname; ?></p>
@@ -101,12 +101,25 @@ window.onclick = function(event) {
       </div>
     </div>
   </nav>
-  <article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
-    <h1 class="text-center" style="z-index: 500;">Je bent ingelogd <?php echo $user->firstname; ?> dus......</h1>
-    <p class="text-center lead">Succesvol ingelogd en nu?! allemaal onzin intypen op te kijken of we de database als actieve tabel in onze website kunnen integreren, Dat zou pas mooi zijn. Maar goed dat is het doel (nog) niet dus daar doen we even niets aan ;-)
-    </p>
-    <p id="kopje2"></p>
-  </article>
+<article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light" >
+    <div class="row">
+      <div class="col-md-6 bg-light opacity" >
+
+        <ul >
+          <li ><strong>Activiteiten</strong></li>
+          <li>verschillende activiteiten</li>
+        </ul>
+
+      </div>
+      <div class="col-md-6 bg-light p-2 mb-1 mt-1 opacity">
+
+        <ul >
+          <li><strong>Tijdslots:</strong></li>
+          <li>verschillende tijdsmomenten</li>
+        </ul>
+      </div>
+    </div>
+</article>
   
   <footer class="app-footer backgroundnav">
     <div class="px-3 py-1 d-none d-lg-block d-xl-block">

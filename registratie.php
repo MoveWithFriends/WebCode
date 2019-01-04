@@ -80,28 +80,34 @@
             <a class="navbar-brand" target="_blank" href="https://www.instagram.com/movewithfriends/">
               <img src="images/instagramicon.png" title="Volg ons op Instagram" style="margin-left: 15px;" width="25" height="25" alt=""></a>
             <div class="navbar-brand">
-              <img src="images/loginicon.png" onclick="document.getElementById('modal-wrapper').style.display='block'" style="margin-left: 15px;" width="25" height="25" alt=""> </div>   
+              <img src="images/loginicon.png" title="LOG IN" onclick="document.getElementById('modal-wrapper').style.display='block'" style="margin-left: 15px;" width="25" height="25" alt=""> </div>   
 
 <!-- invliegend inlogscherm --> 
 
               <div id="modal-wrapper" class="modal">
   
-                <form class="modal-content animate" action="index.php" method="post">
+               <form class="modal-content animate" action="index.php" method="post">
                       
                   <div class="imgcontainer">
                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-                    <img src="images/logomwf.png" alt="Avatar" >
+                    <img class="img-responsive3" src="images/logomwf.png" alt="Avatar" >
                     <h1 style="text-align:center">Login</h1>
                   </div>
+        
+                      <?php if ( isset( $login_status ) && false == $login_status ) : ?>
+                      <div class="message error">
+                          <p>Your username and password are incorrect. Try again.</p>
+                      </div>
+                      <?php endif; ?>
 
-                  <div class="container">
-                    <input type="text" placeholder="Enter Username" name="uname">
-                    <input type="password" placeholder="Enter Password" name="psw">        
-                    <button type="submit">Login</button>
-                    <input type="checkbox" style="margin:26px 30px;"> Remember me      
-                    <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-                  </div>
-                  
+                    <div class="container" class="text-center lead">
+                    <input type="text" class="text" name="username" placeholder="Enter username">
+                    <input type="password" class="text" name="password" placeholder="Enter password">
+                    <button type="submit" class="submit" value="Submit">Login</button>
+                    <p><input type="checkbox" name="rememberme" value="1" style="float:left; margin-left:34px; margin-top:9px; margin-right:10px"> Remember Me</p>
+
+                        <p><a href="lostpassword.php" style="float:left; margin-left:34px ">Reset Password</a><a href="registratie.php" style="float:right; margin-right:34px">Register here</a></p>
+                        <p></p>
                 </form>
   
 </div>
@@ -134,13 +140,33 @@ window.onclick = function(event) {
                   <p><?php echo $register_status['message']; ?></p>
               </div>
             <?php endif; ?>
-            <input type="text" class="text" name="name" placeholder="Enter your full name" required>
-            <input type="email" class="email" name="email" placeholder="Enter your email address" required>
-            <input type="text" class="text" name="username" placeholder="Enter username" required>
-            <input type="password" class="text" name="password" placeholder="Enter password" required>
+            <input type="text" class="text" name="firstname" placeholder="Voornaam" required>
+            <input type="text" class="text" name="lastname" placeholder="Achternaam" required>
+            <input type="email" class="email" name="email" placeholder="Email adres" required>
+<!--             <input type="email" class="email" name="email2" placeholder="Voer email adres nogmaals in" required> -->
+            <input type="text" class="text" name="username" placeholder="Gebruikersnaam" required>
+            <input type="password" class="text" name="password" placeholder="Wachtwoord" required>
+<!--             <input type="password" class="text" name="password2" placeholder="Voer wachtwoord nogmaals in" required>  -->
+            <input type="text" class="text" name="phonenumber" placeholder="Telefoonnummer" required>
+            <input type="date" class="text" name="birthdate" placeholder="Geboortedatum" required>
+              <div class="row">
+                <div class="column">
+                  <p>Geslacht</p>
+                    <input type="radio" name="gender" value="male" checked> Man<br>
+                    <input type="radio" name="gender" value="female"> Vrouw<br>
+                    <input type="radio" name="gender" value="neutral"> Gender Neutraal<br> 
+                </div>
+                <div class="column">
+                  <p>Gewenste sexe</p>
+                    <input type="radio" name="preferredgender" value="male" checked> Man<br>
+                    <input type="radio" name="preferredgender" value="female"> Vrouw<br>
+                    <input type="radio" name="preferredgender" value="both"> Beide<br> 
+                    <input type="radio" name="preferredgender" value="neutral"> Gender Neutraal<br> 
+                </div>
+              </div>
+              <br><br><br>
             <input type="submit" class="submit" value="Submit">
-        </form>
-        
+        </form> 
     </div>
 
 </article>

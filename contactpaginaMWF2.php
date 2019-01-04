@@ -5,7 +5,7 @@
       <a href="index.php">
         <img class="img-responsive" src="images/logomwf.png" style=" position: absolute; z-index: 2;" alt="">
       </a>
-      <p class="logofoot"> <?php echo $user->name; ?></p><br>
+      <p class="logofoot"> <?php echo $user->firstname; ?></p>
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -37,10 +37,10 @@
             <a class="nav-link fred" rel="" href="index.php">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="Data_handling.php">Activiteiten en tijden opgeven<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index3.php">Activiteiten en tijden opgeven<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="contactpaginaMWF2.php">Contact<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="contact.php">Contact<span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -54,7 +54,7 @@
             <a class="navbar-brand" target="_blank" href="https://www.instagram.com/movewithfriends/">
               <img src="images/instagramicon.png" title="Volg ons op Instagram" style="margin-left: 15px;" width="25" height="25" alt=""></a>
             <div class="navbar-brand">
-              <p> <a href="logout.php"><img src="images/loginicon.png" title="Log OUT" style="margin-left: 15px;" width="25" height="25" alt=""> </div>    
+              <p> <a href="logout.php"><img src="images/loginicon.png" title="LOG UIT" style="margin-left: 15px;" width="25" height="25" alt=""> </div>    
               <!-- Invliegend inlogscherm -->    
               <div id="modal-wrapper" class="modal">
   
@@ -65,21 +65,21 @@
                     <img src="images/logomwf.png" alt="Avatar" >
                     <h1 style="text-align:center">Login</h1>
                   </div>
-
-                  <div class="container">
+        
                       <?php if ( isset( $login_status ) && false == $login_status ) : ?>
-                          <div class="message error">
-                              <p>Your username and password are incorrect. Try again.</p>
-                          </div>
+                      <div class="message error">
+                          <p>Your username and password are incorrect. Try again.</p>
+                      </div>
                       <?php endif; ?>
-                    <input type="text" placeholder="Enter Username" name="username">
-                    <input type="password" placeholder="Enter Password" name="password">        
-                    <button type="submit">Login</button>
-                    <input type="checkbox" name="rememberme" style="margin:26px 30px;" value="1"> Remember me      
-                    <a href="lostpassword.php" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
-                    <p><a href="registratie.php">Register here</a></p>
-                  </div>
-                  
+
+                    <div class="container" class="text-center lead">
+                    <input type="text" class="text" name="username" placeholder="Enter username">
+                    <input type="password" class="text" name="password" placeholder="Enter password">
+                    <button type="submit" class="submit" value="Submit">Login</button>
+                    <p><input type="checkbox" name="rememberme" value="1" style="float:left; margin-left:34px; margin-top:9px; margin-right:10px"> Remember Me</p>
+
+                        <p><a href="lostpassword.php" style="float:left; margin-left:34px ">Reset Password</a><a href="registratie.php" style="float:right; margin-right:34px">Register here</a></p>
+                        <p></p>
                 </form>
 
                 
