@@ -55,40 +55,71 @@ class Login {
                 return true;
             }
         }
-        
+
         return false;
     }
     
     public function register($post) {
         // Required fields
-        $required = array( 'username', 'password', 'email' );
-        
+        $required = array( 'firstname', 'lastname', 'email', 'username', 'password', 'phonenumber', 'birthdate','gender','preferredgender' );
+        // $post['name'] = $post['firstname'] . " " . $post['lastname'];
+
+        // $parts = explode(" ", $name);
+        // // $post['lastname'] = array_pop($parts);
+        // $post['preposition'] = implode(" ", $parts);
+
         foreach ( $required as $key ) {
             if ( empty( $post[$key] ) ) {
                 return array('status'=>0,'message'=>sprintf('Please enter your %s', $key));
             }
         }
-        
-        // Check if username exists already
+
+        // Check if  email and username already exist
+
         if ( false !== $this->user_exists( $post['username'] ) ) {
-            return array('status'=>0,'message'=>'Username already exists');
+            return array('status'=>0,'message'=>'Gebruikersnaam bestaat al');
         }
+
+        if ( false !== $this->email_exists( $post['email'] ) ) {
+            return array('status'=>0,'message'=>'Emailadres bestaat al');
+        }
+
+        // compare email and password      
+            // $password = trim($_POST['password']);
+            // $password2 = trim($_POST['password2']);
+            // if($password1 != $password2){
+            // echo "Wachtwoorden komen niet overeen";
+            
+        // if ( $email === $email2 ) {
+        //     return array('status'=>0,'message'=>'Emailadressen komen niet overeen');
+        // }
+        //         if ( $post['password'] <> $post['password2'] ) {
+        //     return array('status'=>0,'message'=>'Wachtwoorden komen niet overeen');
+        // }
         
         // Create if doesn't exist
+
         $insert = $this->db->insert('users', 
             array(
+                'firstname' => $post['firstname'],
+                'lastname'  => $post['lastname'],
                 'username'  =>  $post['username'], 
                 'password'  =>  password_hash($post['password'], PASSWORD_DEFAULT),
-                'name'      =>  $post['name'],
                 'email'     =>  $post['email'],
+                // 'name'      => $post['name'],
+                'phonenumber' => $post['phonenumber'],
+                'birthdate' => $post['birthdate'],
+                'gender' => $post['gender'],
+                'preferredgender' => $post['preferredgender'],
+                // 'preposition' => $post['preposition'],
             )
         );
         
         if ( $insert == true ) {
-            return array('status'=>1,'message'=>'Account created successfully');
+            return array('status'=>1,'message'=>'Account succesvol aangemaakt');
         }
         
-        return array('status'=>0,'message'=>'An unknown error occurred.');
+        return array('status'=>0,'message'=>'Onbekende fout.');
     }
     
     public function lost_password($post) {
@@ -243,6 +274,20 @@ class Login {
     }
     
     private function user_exists($where_value, $where_field = 'username') {
+        $user = $this->db->get_results("
+            SELECT * FROM users 
+            WHERE {$where_field} = :where_value", 
+            ['where_value'=>$where_value]
+        );
+        
+        if ( false !== $user ) {
+            return $user[0];
+        }
+        
+        return false;
+    }
+
+    private function email_exists($where_value, $where_field = 'email') {
         $user = $this->db->get_results("
             SELECT * FROM users 
             WHERE {$where_field} = :where_value", 
