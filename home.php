@@ -73,7 +73,7 @@
 
 
 
-                <form class="modal-content animate" action="index.php" method="post">
+                <form class="modal-content animate" action="document.getElementById('modal-wrapper').style.display='block'" method="post">
                       
                   <div class="imgcontainer">
                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
@@ -109,6 +109,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+
           </li>
         </ul>
       </div>

@@ -148,24 +148,23 @@ window.onclick = function(event) {
             <input type="password" class="text" name="password" placeholder="Wachtwoord" required>
 <!--             <input type="password" class="text" name="password2" placeholder="Voer wachtwoord nogmaals in" required>  -->
             <input type="text" class="text" name="phonenumber" placeholder="Telefoonnummer" required>
-            <input type="date" class="text" name="birthdate" placeholder="Geboortedatum" required>
+            <input type="date" class="text" name="birthdate" placeholder="Geboortedatum (dd-mm-jjjj)" required>
               <div class="row">
                 <div class="column">
                   <p>Geslacht</p>
-                    <input type="radio" name="gender" value="male" checked> Man<br>
-                    <input type="radio" name="gender" value="female"> Vrouw<br>
-                    <input type="radio" name="gender" value="neutral"> Gender Neutraal<br> 
+                    <input type="radio" name="gender" value="man" checked> Man<br>
+                    <input type="radio" name="gender" value="vrouw"> Vrouw<br>
+                    <input type="radio" name="gender" value="neutraal"> Gender Neutraal<br> 
                 </div>
                 <div class="column">
                   <p>Gewenste sexe</p>
-                    <input type="radio" name="preferredgender" value="male" checked> Man<br>
-                    <input type="radio" name="preferredgender" value="female"> Vrouw<br>
-                    <input type="radio" name="preferredgender" value="both"> Beide<br> 
-                    <input type="radio" name="preferredgender" value="neutral"> Gender Neutraal<br> 
+                    <input type="radio" name="preferredgender" value="man" checked> Man<br>
+                    <input type="radio" name="preferredgender" value="vrouw"> Vrouw<br>
+                    <input type="radio" name="preferredgender" value="beide"> Beide<br> 
                 </div>
               </div>
               <br><br><br>
-            <input type="submit" class="submit" value="Submit">
+            <button type="submit" class="submit" value="Submit">Registreer</button>
         </form> 
     </div>
 

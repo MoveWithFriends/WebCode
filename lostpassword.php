@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <?php endif; ?>
         <input type="text" class="text" name="email" placeholder="Enter your email address" required>
-        <input type="submit" class="submit" value="Submit">
+        <Button type="submit" class="submit" value="Submit">Reset</Button>
     </form>
     <p><a href="index.php">Login here</a></p>
 </div>
