@@ -7,8 +7,8 @@
             <p>Your username and password are incorrect. Try again.</p>
         </div>
         <?php endif; ?>
-        <input type="text" class="text" name="username" placeholder="Enter username">
-        <input type="password" class="text" name="password" placeholder="Enter password">
+        <input type="text" class="text" name="UserName" placeholder="Enter username">
+        <input type="password" class="text" name="Password" placeholder="Enter password">
         <input type="submit" class="submit" value="Submit">
         <p><input type="checkbox" name="rememberme" value="1"> Remember Me</p>
     </form>

@@ -8,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php include('header.php'); ?>
+<article class="container opacity shadow p-3 mb-4 mt-4 col-xl-8 bg-light">
 <div class="wrapper">
     <form action="" method="post">
         <h1 class="text-center">Lost Password</h1>
@@ -17,9 +18,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><?php echo $status['message']; ?></p>
         </div>
         <?php endif; ?>
-        <input type="text" class="text" name="email" placeholder="Enter your email address" required>
+        <input type="text" class="text" name="Email" placeholder="Enter your email address" required>
         <Button type="submit" class="submit" value="Submit">Reset</Button>
     </form>
     <p><a href="index.php">Login here</a></p>
 </div>
+</article>
 <?php include('footer.php'); ?>
