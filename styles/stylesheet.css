@@ -10,7 +10,7 @@ input[type=text], input[type=password], input[type=email], input[type=date]{
     padding: 12px 20px;
     margin: 8px 0px;
     display: inline-block;
-    border: 1px solid #cc0308;
+    border: 1px solid #ccc;
     box-sizing: border-box;
     font-size:16px;
     font-family:arial;
